@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUBLICATION - COMIKAGI</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+}
+
+/* BODY BACKGROUND */
+body{
+  min-height:100vh;
+  background-color:#111;
+  color:white;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 5%;
+  z-index:1000;
+}
+
+.logo a{
+  color:white;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* NAVIGATION */
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:15px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  padding:6px 10px;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  background:#00c3ff;
+  color:black;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+/* CONTENT */
+.overlay{
+  margin-top:120px;
+  padding:50px 8%;
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+  background:rgba(20,20,20,0.92);
+  border-radius:8px;
+}
+
+.overlay h1{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:30px;
+}
+
+.overlay h2{
+  font-size:18px;
+  margin-top:25px;
+  margin-bottom:10px;
+}
+
+.overlay p{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:10px;
+  text-transform:none;
+}
+
+/* FOOTER */
+footer{
+  margin-top:60px;
+  background:#000;
+  color:white;
+  padding:20px 5%;
+  font-size:12px;
+  text-align:center;
+}
+
+footer a{
+  color:#00c3ff;
+  text-decoration:none;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+  }
+  nav.active{max-height:500px;}
+  nav ul{flex-direction:column;padding:10px 0;}
+  nav ul li{text-align:center;}
+  nav ul li a{padding:15px;display:block;}
+  .menu-toggle{display:block;}
+  .overlay{padding:40px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+  <a href="index.html">COMIKAGI</a>
+</div>
+
+<div class="menu-toggle" id="menuToggle">☰</div>
+
+<nav id="navMenu">
+  <ul>
+    <li><a href="home.html">HOME</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="services.html">SERVICES</a></li>
+    <li><a href="our_work.html">OUR WORK</a></li>
+    <li><a href="publication.html">PUBLICATION</a></li>
+    <li><a href="news.html">NEWS</a></li>
+    <li><a href="contact.html">CONTACTS</a></li>
+  </ul>
+</nav>
+</header>
+
+<div class="overlay">
+
+<h1>PUBLICATION</h1>
+
+<h2>ANNOUNCEMENT</h2>
+<p>
+COMIKAGI regularly publishes official announcements to keep our members,
+partners, and the wider community informed. These include updates on mining
+operations, environmental initiatives, safety measures, and cooperative
+decisions. Transparency is at the heart of our communication strategy, ensuring
+stakeholders remain engaged and aware of developments.
+</p>
+
+<h2>JOBS AND OFFERS</h2>
+<p>
+We provide employment opportunities in the mining sector and promote
+professional development through knowledge-based, skill-based, and field-based
+experience. COMIKAGI is committed to empowering workers and specialists by
+offering fair contracts, training programs, and career growth opportunities.
+</p>
+
+<h2>STUDIES AND RESEARCH</h2>
+<p>
+Our cooperative conducts systematic investigations to test samples of fresh ore
+and tailings. These studies support evidence-based decision-making by collecting,
+analyzing, and interpreting geological and technical data. Research findings are
+shared with stakeholders to improve mining practices and environmental
+sustainability.
+</p>
+
+<h2>NEW MINERALS DISCOVERED</h2>
+<p>
+The COMIKAGI–Kababara mine concession contains Amblygonite deposits, a
+lithium-bearing fluorophosphate mineral containing roughly 8–10% lithium oxide.
+Found in granite pegmatites, it is sometimes used as a high-value source of
+lithium. Discoveries like these highlight the importance of ongoing exploration
+and research in our cooperative.
+</p>
+
+<h2>LATEST UPDATES</h2>
+<p>
+March 2026: COMIKAGI has launched a new sustainability program aimed at reducing
+environmental impact and supporting local communities. More details will be
+shared in upcoming publications.
+</p>
+
+<h2>DISCLAIMER</h2>
+<p>
+The information published on this page is provided for general purposes only.
+COMIKAGI makes no warranties about the completeness or accuracy of the content.
+Any reliance on this information is at your own risk. COMIKAGI is not
+responsible for third-party advertisements or external links.
+</p>
+
+</div>
+
+<footer>
+© 2026 COMIKAGI |
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a>
+</footer>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const navLinks=document.querySelectorAll("nav ul li a");
+
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+navLinks.forEach(link=>{
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.textContent="☰";
+  });
+});
+</script>
+
+</body>
+</html>
