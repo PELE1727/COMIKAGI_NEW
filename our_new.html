@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUR WORK - COMIKAGI</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    text-transform:uppercase;
+}
+
+body{
+    min-height:100vh;
+    background-color:#111;
+    color:white;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:-1;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    z-index:1000;
+}
+
+.logo a{
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* NAVIGATION */
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:15px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    padding:6px 10px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:#00c3ff;
+    color:black;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* CONTENT */
+.overlay{
+    margin-top:120px;
+    padding:50px 8%;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+    background:rgba(20,20,20,0.92);
+    border-radius:8px;
+}
+
+.overlay h1{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:30px;
+}
+
+.overlay h2{
+    font-size:18px;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+.overlay p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:10px;
+    text-transform:none;
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    background:#000;
+    color:white;
+    padding:20px 5%;
+    font-size:12px;
+    text-align:center;
+}
+
+footer a{
+    color:#00c3ff;
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+/* COOKIE BANNER */
+#cookie-banner{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#222;
+    color:white;
+    padding:15px;
+    text-align:center;
+    font-size:13px;
+    z-index:2000;
+    display:none;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+#cookie-banner a{color:#00c3ff;text-decoration:none;}
+#cookie-banner button{
+    margin-left:10px;
+    padding:6px 12px;
+    background:#00c3ff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    color:black;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 0.5s ease;
+    }
+    nav.active{max-height:500px;}
+    nav ul{flex-direction:column;padding:10px 0;}
+    nav ul li{text-align:center;}
+    nav ul li a{padding:15px;display:block;}
+    .menu-toggle{display:block;}
+    .overlay{padding:40px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<a href="index.html">COMIKAGI</a>
+</div>
+
+<div class="menu-toggle" id="menuToggle">☰</div>
+
+<nav id="navMenu">
+<ul>
+<li><a href="home.html">HOME</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="our_work.html">OUR WORK</a></li>
+<li><a href="publication.html">PUBLICATION</a></li>
+<li><a href="news.html">NEWS</a></li>
+<li><a href="contact.html">CONTACTS</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="overlay">
+
+<h1>OUR WORK</h1>
+
+<h2>MINING METHOD</h2>
+<p>
+COMIKAGI applies underground mining methods designed to maximize safety and efficiency. 
+Our operations focus on extracting mineral deposits beneath the surface in pegmatite ores 
+hosted in schist and metasedimentary rocks. Techniques such as room-and-pillar mining are 
+selected based on orebody shape, depth, and strength to optimize recovery and cost-effectiveness.
+</p>
+<p>
+We continuously evaluate new technologies and practices to improve worker safety, reduce 
+environmental impact, and increase productivity. Our mining teams undergo regular training 
+to ensure compliance with international standards.
+</p>
+
+<h2>MINERAL FIELD PROCESSING</h2>
+<p>
+Mineral field processing, also known as beneficiation, is carried out directly at the mine site. 
+This process separates valuable minerals from waste rock through sluicing and other techniques. 
+By upgrading the economic value of mined material, we produce high-grade concentrates while 
+managing tailings responsibly to reduce environmental impact.
+</p>
+<p>
+Our processing facilities are designed to minimize waste and maximize recovery. We invest in 
+research to develop more sustainable beneficiation methods that align with global best practices.
+</p>
+
+<h2>SECURITY</h2>
+<p>
+Security is central to our operations. COMIKAGI implements strict measures to protect mined 
+minerals from the field to the office and ultimately to the market. Our protocols ensure 
+traceability, accountability, and compliance with international standards.
+</p>
+<p>
+We collaborate with local authorities and international partners to maintain secure supply chains 
+and prevent illegal trade. Security audits are conducted regularly to strengthen our systems.
+</p>
+
+<h2>COMMUNITY AND SOCIAL ENGAGEMENT</h2>
+<p>
+We believe mining should benefit communities. COMIKAGI invests in social, economic, and 
+environmental projects that empower local members to participate in decision-making and 
+increase ownership of initiatives. These efforts boost self-esteem, improve well-being, 
+and build stronger, more resilient communities.
+</p>
+<p>
+Our cooperative supports education, healthcare, and infrastructure projects. We also run 
+awareness campaigns on environmental protection and responsible resource use.
+</p>
+
+<h2>LATEST PROJECTS</h2>
+<p>
+In 2026, COMIKAGI launched a community water supply initiative and expanded training 
+programs for young miners. These projects reflect our commitment to sustainability, 
+education, and social responsibility. Future projects include renewable energy integration 
+and expanded community development programs.
+</p>
+
+<h2>DISCLAIMER</h2>
+<p>
+The information provided on this page is for general purposes only. COMIKAGI makes no 
+warranties about the completeness or accuracy of the content. Any reliance on this 
+information is at your own risk. COMIKAGI is not responsible for third-party advertisements, 
+external links, or damages arising from reliance on published information.
+</p>
+
+</div>
+
+<footer>
+© 2026 COMIKAGI |
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
+</footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner">
+  This site uses cookies to improve your experience. 
+  By continuing to use our website, you agree to our 
+  <a href="privacy_policy.html">Privacy Policy</a>.
+  <button id="accept-cookies">Accept</button>
+  <button id="decline-cookies">Decline</button>
+</div>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const navLinks=document.querySelectorAll("nav ul li a");
+
+menuToggle.addEventListener("click",()=>{
+    navMenu.classList.toggle("active");
+    menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+navLinks.forEach(link=>{
+    link.addEventListener("click",()=>{
+        navMenu.classList.remove("active");
+        menuToggle.textContent="☰";
+    });
+});
+
+// Cookie banner logic
+window.onload = function() {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+};
+
+document.getElementById("accept-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("decline-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "false");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("manage-cookies").addEventListener("click", function() {
+  document.getElementById("cookie-banner").style.display = "block";
+});
+</script>
+
+</body>
+</html>
