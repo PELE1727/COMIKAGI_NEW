@@ -14,7 +14,6 @@
   text-transform:uppercase;
 }
 
-/* BODY BACKGROUND */
 body{
   min-height:100vh;
   background-color:#111;
@@ -130,6 +129,33 @@ footer a:hover{
   text-decoration:underline;
 }
 
+/* COOKIE BANNER */
+#cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#222;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:13px;
+  z-index:2000;
+  display:none;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+#cookie-banner a{color:#00c3ff;text-decoration:none;}
+#cookie-banner button{
+  margin-left:10px;
+  padding:6px 12px;
+  background:#00c3ff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  color:black;
+  font-weight:bold;
+}
+
 /* MOBILE */
 @media(max-width:768px){
   nav{
@@ -183,25 +209,37 @@ footer a:hover{
 COMIKAGI regularly publishes official announcements to keep our members,
 partners, and the wider community informed. These include updates on mining
 operations, environmental initiatives, safety measures, and cooperative
-decisions. Transparency is at the heart of our communication strategy, ensuring
-stakeholders remain engaged and aware of developments.
+decisions. Transparency is at the heart of our communication strategy.
+</p>
+<p>
+Announcements also cover new partnerships, government regulations, and
+community programs. By sharing timely information, we ensure stakeholders
+remain engaged and aware of developments that affect them directly.
 </p>
 
 <h2>JOBS AND OFFERS</h2>
 <p>
-We provide employment opportunities in the mining sector and promote
+COMIKAGI provides employment opportunities in the mining sector and promotes
 professional development through knowledge-based, skill-based, and field-based
-experience. COMIKAGI is committed to empowering workers and specialists by
-offering fair contracts, training programs, and career growth opportunities.
+experience for workers and specialists.
+</p>
+<p>
+We publish job openings, internships, and training programs to attract talent
+and empower local communities. Our cooperative values fair contracts, equal
+opportunities, and career growth for all employees.
 </p>
 
 <h2>STUDIES AND RESEARCH</h2>
 <p>
-Our cooperative conducts systematic investigations to test samples of fresh ore
-and tailings. These studies support evidence-based decision-making by collecting,
-analyzing, and interpreting geological and technical data. Research findings are
-shared with stakeholders to improve mining practices and environmental
-sustainability.
+Research and studies are conducted through systematic investigations to test
+samples of fresh ore and tailings. These studies support evidence-based
+decision-making by collecting, analyzing, and interpreting geological and
+technical data.
+</p>
+<p>
+Our publications include technical reports, environmental impact assessments,
+and sustainability studies. Sharing research findings helps improve mining
+practices and promotes responsible resource management.
 </p>
 
 <h2>NEW MINERALS DISCOVERED</h2>
@@ -209,8 +247,12 @@ sustainability.
 The COMIKAGI–Kababara mine concession contains Amblygonite deposits, a
 lithium-bearing fluorophosphate mineral containing roughly 8–10% lithium oxide.
 Found in granite pegmatites, it is sometimes used as a high-value source of
-lithium. Discoveries like these highlight the importance of ongoing exploration
-and research in our cooperative.
+lithium.
+</p>
+<p>
+Discoveries like these highlight the importance of ongoing exploration and
+research. We document new mineral findings to support innovation, attract
+investment, and contribute to global knowledge in mining science.
 </p>
 
 <h2>LATEST UPDATES</h2>
@@ -219,13 +261,19 @@ March 2026: COMIKAGI has launched a new sustainability program aimed at reducing
 environmental impact and supporting local communities. More details will be
 shared in upcoming publications.
 </p>
+<p>
+We also plan to expand renewable energy projects and strengthen community
+development initiatives. Future updates will continue to reflect our commitment
+to transparency and progress.
+</p>
 
 <h2>DISCLAIMER</h2>
 <p>
 The information published on this page is provided for general purposes only.
 COMIKAGI makes no warranties about the completeness or accuracy of the content.
 Any reliance on this information is at your own risk. COMIKAGI is not
-responsible for third-party advertisements or external links.
+responsible for third-party advertisements, external links, or damages arising
+from reliance on published information.
 </p>
 
 </div>
@@ -236,10 +284,21 @@ responsible for third-party advertisements or external links.
 <a href="terms.html">Terms of Service</a> |
 <a href="cookies.html">Cookie Policy</a> |
 <a href="disclaimer.html">Disclaimer</a> |
-<a href="contact.html">Contact Us</a>
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
 </footer>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner">
+  This site uses cookies to improve your experience. 
+  By continuing to use our website, you agree to our 
+  <a href="privacy_policy.html">Privacy Policy</a>.
+  <button id="accept-cookies">Accept</button>
+  <button id="decline-cookies">Decline</button>
+</div>
+
 <script>
+// MENU
 const menuToggle=document.getElementById("menuToggle");
 const navMenu=document.getElementById("navMenu");
 const navLinks=document.querySelectorAll("nav ul li a");
@@ -254,6 +313,27 @@ navLinks.forEach(link=>{
     navMenu.classList.remove("active");
     menuToggle.textContent="☰";
   });
+});
+
+// COOKIE LOGIC
+window.onload = function() {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+};
+
+document.getElementById("accept-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("decline-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "false");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("manage-cookies").addEventListener("click", function() {
+  document.getElementById("cookie-banner").style.display = "block";
 });
 </script>
 
