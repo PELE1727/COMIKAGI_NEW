@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERVICES - COMIKAGI</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+}
+
+body{
+  min-height:100vh;
+  background:#111;
+  color:white;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  z-index:1000;
+}
+
+.logo a{
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  text-decoration:none;
+  letter-spacing:1px;
+}
+
+/* NAVIGATION */
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:14px;
+  padding:8px 16px;
+  border-radius:25px;
+  transition:0.3s ease;
+}
+
+nav ul li a:hover{
+  background:#00c3ff;
+  color:black;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+/* CONTENT */
+.overlay{
+  margin-top:120px;
+  padding:50px 8%;
+  max-width:1100px;
+  margin:auto;
+  background:rgba(20,20,20,0.92);
+  border-radius:8px;
+}
+
+.overlay h1{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:36px;
+}
+
+.overlay h2{
+  font-size:20px;
+  margin-top:25px;
+  margin-bottom:10px;
+}
+
+.overlay p{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:10px;
+  text-transform:none;
+}
+
+/* FOOTER */
+footer{
+  margin-top:60px;
+  background:#000;
+  color:white;
+  padding:20px 6%;
+  font-size:13px;
+  text-align:center;
+}
+
+footer a{
+  color:#00c3ff;
+  text-decoration:none;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+/* COOKIE BANNER */
+#cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#222;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:13px;
+  z-index:2000;
+  display:none;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+#cookie-banner a{color:#00c3ff;text-decoration:none;}
+#cookie-banner button{
+  margin-left:10px;
+  padding:6px 12px;
+  background:#00c3ff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  color:black;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+  }
+  nav.active{max-height:400px;}
+  nav ul{flex-direction:column;padding:10px 0;}
+  nav ul li{text-align:center;}
+  nav ul li a{padding:15px;display:block;}
+  .menu-toggle{display:block;}
+  .overlay{padding:40px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">COMIKAGI</a>
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navMenu">
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="our_work.html">OUR WORK</a></li>
+      <li><a href="publication.html">PUBLICATION</a></li>
+      <li><a href="news.html">NEWS</a></li>
+      <li><a href="contact.html">CONTACTS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay">
+  <h1>SERVICES</h1>
+
+  <h2>MINING</h2>
+  <p>
+  COMIKAGI specializes in responsible mining practices. We extract cassiterite and coltan 
+  from pegmatite ores hosted in metasedimentary rocks. Our mining operations prioritize 
+  worker safety, environmental protection, and community benefits.
+  </p>
+  <p>
+  We use modern underground techniques and invest in training programs to ensure our 
+  workforce operates efficiently and safely. Mining is not only about resource extraction 
+  but also about creating sustainable value for future generations.
+  </p>
+
+  <h2>LABORATORY WORK</h2>
+  <p>
+  Our laboratories conduct scientific testing and analysis of geological samples to 
+  determine chemical composition and quality control. Using advanced XRF methods, we 
+  provide accurate data that guides mining decisions and ensures compliance with 
+  international standards.
+  </p>
+  <p>
+  Laboratory work also supports research projects, environmental monitoring, and 
+  innovation in mineral exploration. Transparency in testing builds trust with 
+  stakeholders and partners.
+  </p>
+
+  <h2>MINERAL PROCESSING</h2>
+  <p>
+  Mineral processing involves separating valuable minerals from raw ore and waste rock. 
+  COMIKAGI applies physical and chemical methods to increase grade and concentration, 
+  producing high-quality mineral products.
+  </p>
+  <p>
+  We continuously improve our beneficiation techniques to reduce waste and minimize 
+  environmental impact. Tailings management and recycling initiatives are part of our 
+  commitment to sustainability.
+  </p>
+
+  <h2>MARKET</h2>
+  <p>
+  Metal and mineral prices are influenced by supply and demand, production costs, 
+  economic conditions, and global commodity markets. COMIKAGI monitors these trends 
+  closely to provide fair and competitive offers to clients.
+  </p>
+  <p>
+  Our publications include market analyses and forecasts, helping stakeholders make 
+  informed decisions. We believe in transparency and fairness in trade.
+  </p>
+
+  <h2>HOSPITALITY</h2>
+  <p>
+  Hospitality reflects COMIKAGI’s commitment to excellence in service, accommodation, 
+  and guest care. We provide facilities that welcome partners, researchers, and 
+  community members with professionalism and respect.
+  </p>
+  <p>
+  Our hospitality services strengthen relationships and foster collaboration, ensuring 
+  that visitors experience comfort and trust in our cooperative.
+  </p>
+
+  <h2>LATEST UPDATES</h2>
+  <p>
+  March 2026: COMIKAGI expanded its laboratory facilities to support advanced mineral 
+  testing and launched a new training program for young geologists. Future updates will 
+  highlight sustainability projects and community development initiatives.
+  </p>
+
+  <h2>DISCLAIMER</h2>
+  <p>
+  The information provided on this page is for general purposes only. COMIKAGI makes no 
+  warranties about the completeness or accuracy of the content. Any reliance on this 
+  information is at your own risk. COMIKAGI is not responsible for third-party 
+  advertisements, external links, or damages arising from reliance on published 
+  information.
+  </p>
+</div>
+
+<footer>
+© 2026 COMIKAGI |
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
+</footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner">
+  This site uses cookies to improve your experience. 
+  By continuing to use our website, you agree to our 
+  <a href="privacy_policy.html">Privacy Policy</a>.
+  <button id="accept-cookies">Accept</button>
+  <button id="decline-cookies">Decline</button>
+</div>
+
+<script>
+// MENU
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const navLinks=document.querySelectorAll("nav ul li a");
+
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+navLinks.forEach(link=>{
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.textContent="☰";
+  });
+});
+
+// COOKIE LOGIC
+window.onload = function() {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+};
+
+document.getElementById("accept-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("decline-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookiesAccepted", "false");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("manage-cookies").addEventListener("click", function() {
+  document.getElementById("cookie-banner").style.display = "block";
+});
+</script>
+
+</body>
+</html>
