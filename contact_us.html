@@ -129,7 +129,6 @@ footer a:hover{text-decoration:underline;}
           <input type="email" name="email" placeholder="YOUR EMAIL" required>
           <input type="text" name="subject" placeholder="SUBJECT" required>
           <textarea name="message" placeholder="YOUR MESSAGE" required></textarea>
-          <!-- Google reCAPTCHA widget -->
           <div class="g-recaptcha" data-sitekey="your-site-key"></div>
           <button type="submit">SEND MESSAGE</button>
         </form>
@@ -141,8 +140,12 @@ footer a:hover{text-decoration:underline;}
 
 <footer>
 © 2026 COMIKAGI |
-<a href="privacy_policy.html">PRIVACY POLICY</a> |
-<a href="terms_and_service.html">TERMS OF SERVICE</a>
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms_and_service.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
 </footer>
 
 <!-- Google reCAPTCHA script line -->
@@ -152,18 +155,39 @@ footer a:hover{text-decoration:underline;}
 const menuToggle=document.getElementById("menuToggle");
 const navMenu=document.getElementById("navMenu");
 const navLinks=document.querySelectorAll("nav ul li a");
-menuToggle.addEventListener("click",()=>{navMenu.classList.toggle("active");menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";});
-navLinks.forEach(link=>{link.addEventListener("click",()=>{navMenu.classList.remove("active");menuToggle.textContent="☰";});});
+
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+navLinks.forEach(link=>{
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.textContent="☰";
+  });
+});
 
 // Form submission confirmation
 const form=document.querySelector("form");
 const status=document.getElementById("form-status");
+
 form.addEventListener("submit",async(e)=>{
   e.preventDefault();
   const data=new FormData(form);
-  const response=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
-  if(response.ok){status.textContent="Thank you! Your message has been sent.";form.reset();}
-  else{status.textContent="Oops! There was a problem submitting your form.";}
+
+  const response=await fetch(form.action,{
+    method:form.method,
+    body:data,
+    headers:{'Accept':'application/json'}
+  });
+
+  if(response.ok){
+    status.textContent="Thank you! Your message has been sent.";
+    form.reset();
+  } else {
+    status.textContent="Oops! There was a problem submitting your form.";
+  }
 });
 </script>
 
