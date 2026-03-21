@@ -1,209 +1,228 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>COMIKAGI - Cooperative Miniere Kababara et Gikingo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COMIKAGI - Cooperative Miniere Kababara et Gikingo</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-      text-transform:uppercase;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+}
 
-    body{
-      min-height:100vh;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-      animation:slideshow 15s infinite;
-      display:flex;
-      flex-direction:column;
-      color:white;
-    }
+body{
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  animation:slideshow 15s infinite;
+  display:flex;
+  flex-direction:column;
+  color:white;
+}
 
-    @keyframes slideshow{
-      0%{background-image:url("image1.png");}
-      33%{background-image:url("image2.png");}
-      66%{background-image:url("image3.png");}
-      100%{background-image:url("image1.png");}
-    }
+/* BACKGROUND */
+@keyframes slideshow{
+  0%{background-image:url("image1.png");}
+  33%{background-image:url("image2.png");}
+  66%{background-image:url("image3.png");}
+  100%{background-image:url("image1.png");}
+}
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      background:rgba(0,0,0,0.9);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 40px;
-      z-index:1000;
-    }
+/* ===== UPDATED NAVBAR ONLY ===== */
 
-    .logo a{
-      color:white;
-      font-size:18px;
-      font-weight:bold;
-      text-decoration:none;
-    }
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 5%;
+  z-index:1000;
+  backdrop-filter:blur(6px);
+}
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:25px;
-    }
+.logo a{
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  text-decoration:none;
+  letter-spacing:1px;
+}
 
-    nav ul li a{
-      color:white;
-      text-decoration:none;
-      font-size:14px;
-      padding:8px 16px;
-      border-radius:25px;
-      transition:0.3s;
-    }
+/* NAV */
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
-    nav ul li a:hover{
-      background:#00c3ff;
-      color:black;
-    }
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  padding:8px 14px;
+  border-radius:25px;
+  transition:0.3s;
+  border:1px solid transparent;
+}
 
-    .menu-toggle{
-      display:none;
-      font-size:30px;
-      color:white;
-      cursor:pointer;
-    }
+nav ul li a:hover{
+  background:#00c3ff;
+  color:black;
+}
 
-    /* CONTENT */
-    .overlay{
-      flex:1;
-      background:rgba(0,0,0,0.65);
-      padding:140px 60px 40px;
-      text-align:center;
-    }
+/* ACTIVE LINK EFFECT (NEW but subtle) */
+nav ul li a.active{
+  border:1px solid #00c3ff;
+}
 
-    .overlay h1{
-      font-size:42px;
-      margin-bottom:30px;
-    }
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
 
-    section{
-      margin-bottom:35px;
-      padding-bottom:15px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
+/* ===== END NAVBAR ===== */
 
-    section:last-child{
-      border-bottom:none;
-    }
+/* CONTENT */
+.overlay{
+  flex:1;
+  background:rgba(0,0,0,0.65);
+  padding:140px 60px 40px;
+  text-align:center;
+}
 
-    .overlay h2{
-      font-size:22px;
-      margin-bottom:12px;
-      color:#00c3ff;
-      letter-spacing:1px;
-    }
+.overlay h1{
+  font-size:42px;
+  margin-bottom:30px;
+}
 
-    .overlay p{
-      font-size:15px;
-      line-height:1.6;
-      margin-bottom:12px;
-      text-transform:none;
-      max-width:900px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+section{
+  margin-bottom:35px;
+  padding-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
 
-    footer{
-      background:#000;
-      color:white;
-      padding:20px 6%;
-      font-size:13px;
-      text-align:center;
-    }
+section:last-child{
+  border-bottom:none;
+}
 
-    footer a{
-      color:#00c3ff;
-      text-decoration:none;
-    }
+.overlay h2{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#00c3ff;
+}
 
-    footer a:hover{
-      text-decoration:underline;
-    }
+.overlay p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:12px;
+  text-transform:none;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-    #cookie-banner{
-      position:fixed;
-      bottom:0;
-      left:0;
-      width:100%;
-      background:#222;
-      color:white;
-      padding:15px;
-      text-align:center;
-      font-size:13px;
-      z-index:2000;
-      display:none;
-    }
+/* FOOTER (UNCHANGED) */
+footer{
+  background:#000;
+  color:white;
+  padding:20px 6%;
+  font-size:13px;
+  text-align:center;
+}
 
-    #cookie-banner button{
-      margin-left:10px;
-      padding:6px 12px;
-      background:#00c3ff;
-      border:none;
-      border-radius:4px;
-      cursor:pointer;
-      color:black;
-      font-weight:bold;
-    }
+footer a{
+  color:#00c3ff;
+  text-decoration:none;
+}
 
-    @media(max-width:768px){
-      nav{
-        position:absolute;
-        top:70px;
-        left:0;
-        width:100%;
-        background:rgba(0,0,0,0.95);
-        max-height:0;
-        overflow:hidden;
-        transition:max-height 0.5s;
-      }
+footer a:hover{
+  text-decoration:underline;
+}
 
-      nav.active{
-        max-height:400px;
-      }
+/* COOKIE */
+#cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#222;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:13px;
+  z-index:2000;
+  display:none;
+}
 
-      nav ul{
-        flex-direction:column;
-        padding:10px 0;
-      }
+#cookie-banner button{
+  margin-left:10px;
+  padding:6px 12px;
+  background:#00c3ff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  color:black;
+  font-weight:bold;
+}
 
-      nav ul li{
-        text-align:center;
-      }
+/* MOBILE */
+@media(max-width:768px){
 
-      nav ul li a{
-        padding:15px;
-        display:block;
-      }
+  nav{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.97);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+  }
 
-      .menu-toggle{
-        display:block;
-      }
+  nav.active{
+    max-height:500px;
+  }
 
-      .overlay{
-        padding:120px 20px;
-      }
+  nav ul{
+    flex-direction:column;
+    padding:10px 0;
+  }
 
-      .overlay h1{
-        font-size:28px;
-      }
-    }
-  </style>
+  nav ul li{
+    text-align:center;
+  }
+
+  nav ul li a{
+    padding:15px;
+    display:block;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .overlay{
+    padding:120px 20px;
+  }
+
+  .overlay h1{
+    font-size:28px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -215,51 +234,50 @@
 
   <nav id="navMenu">
     <ul>
-      <li><a href="home.html">HOME</a></li>
+      <li><a href="home.html" class="active">HOME</a></li>
       <li><a href="about_us.html">ABOUT US</a></li>
       <li><a href="services.html">SERVICES</a></li>
       <li><a href="our_work.html">OUR WORK</a></li>
       <li><a href="publication.html">PUBLICATION</a></li>
       <li><a href="our_new.html">NEWS</a></li>
       <li><a href="contact_us.html">CONTACT US</a></li>
-    
     </ul>
   </nav>
 </header>
 
 <div class="overlay">
 
-  <h1>WELCOME TO COMIKAGI</h1>
+<h1>WELCOME TO COMIKAGI</h1>
 
-  <section>
-    <h2>WHO WE ARE</h2>
-    <p>COMIKAGI (Cooperative Miniere Kababara et Gikingo) is a mining cooperative dedicated to responsible resource extraction, community empowerment, and sustainable development. We operate in Gakenke District, Rwanda, focusing on cassiterite and coltan mining.</p>
-  </section>
+<section>
+<h2>WHO WE ARE</h2>
+<p>COMIKAGI (Cooperative Miniere Kababara et Gikingo) is a mining cooperative dedicated to responsible resource extraction, community empowerment, and sustainable development. We operate in Gakenke District, Rwanda, focusing on cassiterite and coltan mining.</p>
+</section>
 
-  <section>
-    <h2>OUR MISSION</h2>
-    <p>Our mission is to balance economic growth with environmental stewardship. We aim to provide employment opportunities, promote fair trade, and invest in community projects that improve education, healthcare, and infrastructure.</p>
-  </section>
+<section>
+<h2>OUR MISSION</h2>
+<p>Our mission is to balance economic growth with environmental stewardship. We aim to provide employment opportunities, promote fair trade, and invest in community projects that improve education, healthcare, and infrastructure.</p>
+</section>
 
-  <section>
-    <h2>OUR VISION</h2>
-    <p>We envision a future where mining contributes positively to society, ensuring that local communities benefit directly from natural resources. Transparency, accountability, and sustainability guide our vision.</p>
-  </section>
+<section>
+<h2>OUR VISION</h2>
+<p>We envision a future where mining contributes positively to society, ensuring that local communities benefit directly from natural resources. Transparency, accountability, and sustainability guide our vision.</p>
+</section>
 
-  <section>
-    <h2>COMMUNITY IMPACT</h2>
-    <p>COMIKAGI invests in social programs, including clean water initiatives, youth training, and environmental conservation. We believe mining should strengthen communities, not divide them.</p>
-  </section>
+<section>
+<h2>COMMUNITY IMPACT</h2>
+<p>COMIKAGI invests in social programs, including clean water initiatives, youth training, and environmental conservation. We believe mining should strengthen communities, not divide them.</p>
+</section>
 
-  <section>
-    <h2>LATEST UPDATES</h2>
-    <p>March 2026: COMIKAGI launched a renewable energy project to power mining operations sustainably. We also expanded training programs for young geologists and introduced new safety protocols.</p>
-  </section>
+<section>
+<h2>LATEST UPDATES</h2>
+<p>March 2026: COMIKAGI launched a renewable energy project to power mining operations sustainably. We also expanded training programs for young geologists and introduced new safety protocols.</p>
+</section>
 
-  <section>
-    <h2>DISCLAIMER</h2>
-    <p>The information provided on this site is for general purposes only. COMIKAGI makes no warranties about the completeness or accuracy of the content. Any reliance on this information is at your own risk. COMIKAGI is not responsible for third-party advertisements or external links.</p>
-  </section>
+<section>
+<h2>DISCLAIMER</h2>
+<p>The information provided on this site is for general purposes only. COMIKAGI makes no warranties about the completeness or accuracy of the content. Any reliance on this information is at your own risk. COMIKAGI is not responsible for third-party advertisements or external links.</p>
+</section>
 
 </div>
 
