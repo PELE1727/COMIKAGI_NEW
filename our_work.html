@@ -129,6 +129,38 @@ footer a:hover{
     text-decoration:underline;
 }
 
+/* COOKIE */
+#cookie-banner{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#222;
+color:white;
+padding:15px;
+text-align:center;
+font-size:13px;
+z-index:2000;
+display:none;
+box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+
+#cookie-banner a{
+color:#00c3ff;
+text-decoration:none;
+}
+
+#cookie-banner button{
+margin-left:10px;
+padding:6px 12px;
+background:#00c3ff;
+border:none;
+border-radius:4px;
+cursor:pointer;
+color:black;
+font-weight:bold;
+}
+
 /* MOBILE */
 @media(max-width:768px){
     nav{
@@ -185,6 +217,14 @@ hosted in schist and metasedimentary rocks. Techniques such as room-and-pillar m
 selected based on orebody shape, depth, and strength to optimize recovery and cost-effectiveness.
 </p>
 
+<!-- ADDED -->
+<p>
+In addition to traditional underground methods, COMIKAGI continuously evaluates modern mining 
+technologies to improve productivity and reduce operational risks. Regular geological mapping, 
+rock stability assessments, and ventilation control systems are implemented to ensure safe 
+working conditions for all personnel.
+</p>
+
 <h2>MINERAL FIELD PROCESSING</h2>
 <p>
 Mineral field processing, also known as beneficiation, is carried out directly at the mine site. 
@@ -193,11 +233,25 @@ By upgrading the economic value of mined material, we produce high-grade concent
 managing tailings responsibly to reduce environmental impact.
 </p>
 
+<!-- ADDED -->
+<p>
+Our processing systems are designed to minimize waste and maximize resource utilization. 
+Continuous monitoring of processing efficiency allows us to improve recovery rates while 
+maintaining environmentally responsible practices aligned with sustainability goals.
+</p>
+
 <h2>SECURITY</h2>
 <p>
 Security is central to our operations. COMIKAGI implements strict measures to protect mined 
 minerals from the field to the office and ultimately to the market. Our protocols ensure 
 traceability, accountability, and compliance with international standards.
+</p>
+
+<!-- ADDED -->
+<p>
+Security systems include controlled site access, regular audits, and tracking mechanisms 
+that ensure minerals are handled transparently throughout the supply chain. These measures 
+help prevent unauthorized activities and reinforce trust with stakeholders and regulatory bodies.
 </p>
 
 <h2>COMMUNITY AND SOCIAL ENGAGEMENT</h2>
@@ -208,11 +262,24 @@ increase ownership of initiatives. These efforts boost self-esteem, improve well
 and build stronger, more resilient communities.
 </p>
 
+<!-- ADDED -->
+<p>
+Our community programs include education support, health initiatives, and infrastructure 
+development projects aimed at improving quality of life. We actively collaborate with local 
+leaders and organizations to ensure that our activities align with community needs.
+</p>
+
 <h2>LATEST PROJECTS</h2>
 <p>
 In 2026, COMIKAGI launched a community water supply initiative and expanded training 
 programs for young miners. These projects reflect our commitment to sustainability, 
 education, and social responsibility.
+</p>
+
+<!-- ADDED -->
+<p>
+Future projects will focus on environmental rehabilitation, renewable energy integration, 
+and continued skills development programs to prepare the next generation of mining professionals.
 </p>
 
 <h2>DISCLAIMER</h2>
@@ -223,6 +290,13 @@ information is at your own risk. COMIKAGI is not responsible for third-party adv
 or external links.
 </p>
 
+<!-- ADDED -->
+<p>
+Users are encouraged to verify information independently and consult professional advice 
+where necessary. COMIKAGI shall not be held liable for any direct or indirect losses arising 
+from the use of information presented on this page.
+</p>
+
 </div>
 
 <footer>
@@ -231,10 +305,20 @@ or external links.
 <a href="terms_and_service.html">Terms of Service</a> |
 <a href="cookies.html">Cookie Policy</a> |
 <a href="disclaimer.html">Disclaimer</a> |
-<a href="contact.html">Contact Us</a>
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
 </footer>
 
+<div id="cookie-banner">
+This site uses cookies to improve your experience. 
+By continuing to use our website, you agree to our 
+<a href="privacy_policy.html">Privacy Policy</a>.
+<button id="accept-cookies">Accept</button>
+<button id="decline-cookies">Decline</button>
+</div>
+
 <script>
+
 const menuToggle=document.getElementById("menuToggle");
 const navMenu=document.getElementById("navMenu");
 const navLinks=document.querySelectorAll("nav ul li a");
@@ -250,6 +334,29 @@ navLinks.forEach(link=>{
         menuToggle.textContent="☰";
     });
 });
+
+/* COOKIE */
+
+window.onload=function(){
+if(!localStorage.getItem("cookiesAccepted")){
+document.getElementById("cookie-banner").style.display="block";
+}
+};
+
+document.getElementById("accept-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","true");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("decline-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","false");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("manage-cookies").onclick=function(){
+document.getElementById("cookie-banner").style.display="block";
+};
+
 </script>
 
 </body>
