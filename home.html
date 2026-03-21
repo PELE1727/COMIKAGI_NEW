@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUR WORK - COMIKAGI</title>
+
+<style>
+
+/* GENERAL */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+body{
+  background:#111;
+  color:white;
+  min-height:100vh;
+}
+
+/* NAVBAR */
+header{
+  width:100%;
+  background:#000;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  position:fixed;
+  top:0;
+  z-index:1000;
+}
+.logo a{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+nav ul li a:hover{
+  color:#00c3ff;
+}
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+/* MAIN GRID SECTION */
+.main{
+  margin-top:120px;
+  padding:20px;
+}
+
+/* GRID */
+.container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* BOX STYLE */
+.box{
+  border:1px solid #444;
+  background:#1a1a1a;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* TITLE */
+.title{
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+/* SINGLE IMAGE */
+.single-img{
+  width:100%;
+  flex:1;
+}
+.single-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* COMMUNITY GRID */
+.community-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.community-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+.community-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* FULL WIDTH */
+.full-width{
+  grid-column:1 / 3;
+}
+
+/* WHAT WE DO GRID */
+.what-we-do-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:20px;
+}
+.what-we-do-grid img{
+  width:100%;
+  height:100%; /* stretch to container */
+  object-fit:cover; /* cover fully without distortion */
+  display:block;
+  transition:0.4s;
+}
+
+/* FOOTER */
+footer{
+  margin-top:40px;
+  background:#000;
+  padding:30px;
+  text-align:center;
+  font-size:14px;
+}
+footer a{
+  color:#00c3ff;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+  .menu-toggle{
+    display:block;
+  }
+  nav{
+    width:100%;
+    max-height:0;
+    overflow:hidden;
+    transition:0.5s;
+  }
+  nav.active{
+    max-height:500px;
+  }
+  nav ul{
+    flex-direction:column;
+    align-items:center;
+  }
+  .container{
+    grid-template-columns:1fr;
+  }
+  .full-width{
+    grid-column:1;
+  }
+  .what-we-do-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">
+    <a href="index.html">COMIKAGI</a>
+  </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="about_us.html">ABOUT US</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="our_work.html">OUR WORK</a></li>
+      <li><a href="publication.html">PUBLICATION</a></li>
+      <li><a href="our_new.html">NEWS</a></li>
+      <li><a href="contact_us.html">CONTACTS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- TOP GRID -->
+  <div class="container">
+
+    <!-- COMIKAGI -->
+    <div class="box">
+      <div class="title">COMIKAGI</div>
+      <div class="single-img">
+        <img src="image1.png" alt="COMIKAGI">
+      </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="box">
+      <div class="title">OUR LOCATION</div>
+      <div class="single-img">
+        <img id="locationImg" src="image2.png" alt="Our Location">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMMUNITY -->
+  <div class="container">
+
+    <div class="box full-width">
+      <div class="title">OUR COMMUNITY</div>
+      <div class="community-grid">
+        <img id="img1" alt="Community 1">
+        <img id="img2" alt="Community 2">
+        <img id="img3" alt="Community 3">
+        <img id="img4" alt="Community 4">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT WE DO -->
+  <div class="container">
+    <div class="box full-width">
+      <div class="title">WHAT WE DO</div>
+      <div class="what-we-do-grid">
+        <img id="wwd1" alt="Activity 1">
+        <img id="wwd2" alt="Activity 2">
+        <img id="wwd3" alt="Activity 3">
+        <img id="wwd4" alt="Activity 4">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 COMIKAGI |
+  <a href="privacy_policy.html">Privacy Policy</a> |
+  <a href="terms_and_service.html">Terms of Service</a> |
+  <a href="cookies.html">Cookie Policy</a> |
+  <a href="disclaimer.html">Disclaimer</a> |
+  <a href="contact_us.html">Contact Us</a> |
+  <a href="#" id="manage-cookies">Manage Cookies</a>
+</footer>
+
+<script>
+
+/* MENU */
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+/* COMMUNITY IMAGE ROTATION */
+const communityImages = [
+  "image4.jpeg","image5.jpeg","image6.jpeg","image7.jpeg",
+  "image8.jpeg","image9.jpeg","image10.jpeg","image11.jpeg",
+  "image12.jpeg","image13.jpeg","image14.jpeg","image15.jpeg",
+  "image16.jpeg","image17.jpeg","image18.jpeg","image19.jpeg"
+];
+let index = 0;
+function changeCommunityImages(){
+  document.getElementById("img1").src = communityImages[index % 16];
+  document.getElementById("img2").src = communityImages[(index+1) % 16];
+  document.getElementById("img3").src = communityImages[(index+2) % 16];
+  document.getElementById("img4").src = communityImages[(index+3) % 16];
+  index += 4;
+}
+changeCommunityImages();
+setInterval(changeCommunityImages,3000);
+
+/* LOCATION IMAGE ROTATION */
+const locationImages = ["image2.png","image3.png"];
+let locIndex = 0;
+function changeLocationImage(){
+  document.getElementById("locationImg").src = locationImages[locIndex % 2];
+  locIndex++;
+}
+setInterval(changeLocationImage,4000);
+
+/* WHAT WE DO IMAGE ROTATION (image10 → image21) */
+const wwdImages = [
+  "image10.jpeg","image11.jpeg","image12.jpeg","image13.jpeg",
+  "image14.jpeg","image15.jpeg","image16.jpeg","image17.jpeg",
+  "image18.jpeg","image19.jpeg","image20.jpeg","image21.jpeg"
+];
+let wwdIndex = 0;
+function changeWWDImages(){
+  document.getElementById("wwd1").src = wwdImages[wwdIndex % 12];
+  document.getElementById("wwd2").src = wwdImages[(wwdIndex+1) % 12];
+  document.getElementById("wwd3").src = wwdImages[(wwdIndex+2) % 12];
+  document.getElementById("wwd4").src = wwdImages[(wwdIndex+3) % 12];
+  wwdIndex += 4;
+}
+changeWWDImages();
+setInterval(changeWWDImages,4000);
+
+</script>
+
+</body>
+</html>
