@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,37 +6,240 @@
 <title>Terms of Service - COMIKAGI</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
-body{background:#111;color:#eee;line-height:1.7;}
-nav{width:100%;background:#000;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
-nav h1{color:#fff;font-size:20px;letter-spacing:2px;}
-nav a{color:#aaa;text-decoration:none;margin-left:20px;font-size:14px;transition:0.3s;}
-nav a:hover{color:#fff;}
-.container{max-width:900px;margin:50px auto;padding:20px;}
-h1{font-size:32px;margin-bottom:10px;}
-h2{margin-top:30px;font-size:20px;color:#fff;}
-p{margin:10px 0;color:#ccc;}
-ul{margin:10px 0 10px 20px;}
-li{margin-bottom:8px;}
-.footer{text-align:center;padding:20px;margin-top:50px;font-size:14px;color:#777;border-top:1px solid #333;}
-@media(max-width:768px){nav{flex-direction:column;align-items:flex-start;}nav a{display:block;margin:10px 0 0 0;}.container{padding:15px;}}
-</style>
 
+/* GENERAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+text-transform:uppercase;
+}
+
+body{
+min-height:100vh;
+background:#111;
+color:white;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+z-index:1000;
+}
+
+.logo a{
+color:white;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* NAV */
+
+nav ul{
+list-style:none;
+display:flex;
+gap:15px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:13px;
+padding:6px 10px;
+border-radius:25px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+background:#00c3ff;
+color:black;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* CONTENT */
+
+.container{
+margin-top:120px;
+padding:50px 8%;
+max-width:1000px;
+margin-left:auto;
+margin-right:auto;
+background:rgba(20,20,20,0.92);
+border-radius:8px;
+}
+
+.container h1{
+font-size:30px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.container h2{
+margin-top:25px;
+font-size:18px;
+}
+
+.container p{
+font-size:14px;
+line-height:1.6;
+margin-top:10px;
+text-transform:none;
+}
+
+.container ul{
+margin:10px 0 10px 20px;
+}
+
+.container li{
+margin-bottom:8px;
+text-transform:none;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+background:#000;
+color:white;
+padding:20px 5%;
+font-size:12px;
+text-align:center;
+}
+
+footer a{
+color:#00c3ff;
+text-decoration:none;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+/* COOKIE */
+
+#cookie-banner{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#222;
+color:white;
+padding:15px;
+text-align:center;
+font-size:13px;
+z-index:2000;
+display:none;
+box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+
+#cookie-banner a{
+color:#00c3ff;
+text-decoration:none;
+}
+
+#cookie-banner button{
+margin-left:10px;
+padding:6px 12px;
+background:#00c3ff;
+border:none;
+border-radius:4px;
+cursor:pointer;
+color:black;
+font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.95);
+max-height:0;
+overflow:hidden;
+transition:max-height 0.5s ease;
+}
+
+nav.active{
+max-height:500px;
+}
+
+nav ul{
+flex-direction:column;
+padding:10px 0;
+}
+
+nav ul li{
+text-align:center;
+}
+
+nav ul li a{
+padding:15px;
+display:block;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.container{
+padding:40px 20px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<nav>
-<h1>COMIKAGI</h1>
-<div>
-<a href="index.html">Home</a>
-<a href="about_us.html">About</a>
-<a href="contact_us.html">Contact</a>
+<header>
+
+<div class="logo">
+<a href="index.html">COMIKAGI</a>
 </div>
+
+<div class="menu-toggle" id="menuToggle">☰</div>
+
+<nav id="navMenu">
+<ul>
+<li><a href="home.html">HOME</a></li>
+<li><a href="about_us.html">ABOUT US</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="our_work.html">OUR WORK</a></li>
+<li><a href="publication.html">PUBLICATION</a></li>
+<li><a href="our_new.html">NEWS</a></li>
+<li><a href="contact_us.html">CONTACTS</a></li>
+</ul>
 </nav>
 
+</header>
+
 <div class="container">
-<h1>Terms of Service</h1>
+
+<h1>TERMS OF SERVICE</h1>
 <p><strong>Last Updated:</strong> March 18, 2026</p>
 
 <p>Welcome to COMIKAGI. By accessing or using this website, you agree to comply with and be bound by these Terms of Service.</p>
@@ -49,37 +251,37 @@ li{margin-bottom:8px;}
 <p>You agree to use this website lawfully. You must not:</p>
 <ul>
 <li>Break any laws</li>
-<li>Hack or damage the website</li>
-<li>Spread harmful software</li>
-<li>Copy content without permission</li>
+<li>Hack, disrupt, or damage the website</li>
+<li>Spread harmful software or malicious code</li>
+<li>Copy, distribute, or reuse content without permission</li>
 </ul>
 
 <h2>3. User Responsibilities</h2>
 <p>You are responsible for your own actions when using this website and must comply with all applicable local, national, and international laws.</p>
 
 <h2>4. Intellectual Property</h2>
-<p>All content on this site belongs to COMIKAGI unless stated otherwise.</p>
+<p>All content on this site, including text, graphics, logos, and publications, belongs to COMIKAGI unless otherwise stated. Unauthorized use is prohibited.</p>
 
 <h2>5. User Content</h2>
-<p>By submitting content, you allow us to use and display it. You must ensure it does not violate any laws or third-party rights.</p>
+<p>By submitting content, you grant COMIKAGI a non-exclusive right to use, display, and distribute that content. You must ensure that your submissions do not violate any laws or third-party rights.</p>
 
 <h2>6. Advertising & Affiliate Disclosure</h2>
 <p>This website may display advertisements, including those provided by third-party services such as Google AdSense. We do not control the content of these ads and are not responsible for products or services advertised.</p>
 
-<h2>7. Cookies & Tracking</h2>
-<p>We may use cookies and analytics tools to improve user experience. Please refer to our Privacy Policy for more details on how your data is collected and used.</p>
+<h2>7. Cookies & Tracking Technologies</h2>
+<p>We may use cookies, analytics tools, and similar technologies to improve user experience, analyze traffic, and enhance website performance. By using this site, you consent to such technologies.</p>
 
 <h2>8. Disclaimer</h2>
-<p>This website is provided "as is" without guarantees of accuracy, reliability, or availability.</p>
+<p>This website is provided "as is" without guarantees of accuracy, reliability, or availability. Information may change without notice.</p>
 
 <h2>9. Limitation of Liability</h2>
-<p>We are not responsible for any damages resulting from the use or inability to use this website.</p>
+<p>COMIKAGI shall not be liable for any direct, indirect, or incidental damages resulting from the use or inability to use this website.</p>
 
 <h2>10. Indemnification</h2>
 <p>You agree to indemnify and hold harmless COMIKAGI from any claims, damages, or expenses arising from your use of the website or violation of these terms.</p>
 
 <h2>11. Third-Party Links</h2>
-<p>We are not responsible for external websites linked from our platform.</p>
+<p>This website may contain links to external websites. We are not responsible for their content, policies, or practices.</p>
 
 <h2>12. Termination</h2>
 <p>We reserve the right to suspend or terminate access to the website at any time if users violate these Terms of Service.</p>
@@ -90,13 +292,78 @@ li{margin-bottom:8px;}
 <h2>14. Governing Law</h2>
 <p>These terms are governed by the laws of Rwanda.</p>
 
-<h2>15. Contact</h2>
+<h2>15. Privacy Relationship</h2>
+<p>Your use of this website is also governed by our Privacy Policy, which explains how we collect, use, and protect your data.</p>
+
+<h2>16. Service Availability</h2>
+<p>We do not guarantee that the website will always be available, secure, or free from errors. Maintenance or technical issues may affect access.</p>
+
+<h2>17. Contact Information</h2>
 <p>Email: support@comikagi.com</p>
+
 </div>
 
-<div class="footer">
-© 2026 COMIKAGI. All rights reserved.
+<footer>
+© 2026 COMIKAGI |
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms_and_service.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
+</footer>
+
+<div id="cookie-banner">
+This site uses cookies to improve your experience. 
+By continuing to use our website, you agree to our 
+<a href="privacy_policy.html">Privacy Policy</a>.
+<button id="accept-cookies">Accept</button>
+<button id="decline-cookies">Decline</button>
 </div>
+
+<script>
+
+/* MENU */
+
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const navLinks=document.querySelectorAll("nav ul li a");
+
+menuToggle.addEventListener("click",()=>{
+navMenu.classList.toggle("active");
+menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
+});
+
+navLinks.forEach(link=>{
+link.addEventListener("click",()=>{
+navMenu.classList.remove("active");
+menuToggle.textContent="☰";
+});
+});
+
+/* COOKIES */
+
+window.onload=function(){
+if(!localStorage.getItem("cookiesAccepted")){
+document.getElementById("cookie-banner").style.display="block";
+}
+};
+
+document.getElementById("accept-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","true");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("decline-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","false");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("manage-cookies").onclick=function(){
+document.getElementById("cookie-banner").style.display="block";
+};
+
+</script>
 
 </body>
 </html>
