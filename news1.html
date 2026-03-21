@@ -116,7 +116,7 @@ iframe{
 border:none;
 }
 
-/* FOOTER (styled same as Services page) */
+/* FOOTER */
 
 footer{
 margin-top:60px;
@@ -134,6 +134,39 @@ text-decoration:none;
 
 footer a:hover{
 text-decoration:underline;
+}
+
+/* COOKIE */
+
+#cookie-banner{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#222;
+color:white;
+padding:15px;
+text-align:center;
+font-size:13px;
+z-index:2000;
+display:none;
+box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+}
+
+#cookie-banner a{
+color:#00c3ff;
+text-decoration:none;
+}
+
+#cookie-banner button{
+margin-left:10px;
+padding:6px 12px;
+background:#00c3ff;
+border:none;
+border-radius:4px;
+cursor:pointer;
+color:black;
+font-weight:bold;
 }
 
 /* MOBILE */
@@ -195,7 +228,7 @@ font-size:28px;
 <header>
 
 <div class="logo">
-<a href="index.html">COOPERATIVE MINIERE KABABARA ET GIKINGO</a>
+<a href="index.html">COMIKAGI</a>
 </div>
 
 <div class="menu-toggle" id="menuToggle">☰</div>
@@ -218,6 +251,13 @@ font-size:28px;
 
 <h1>LATEST NEWS</h1>
 
+<!-- ADDED INTRO (IMPORTANT FOR ADSENSE) -->
+<p style="margin-bottom:20px; text-transform:none;">
+This section provides the latest official updates, announcements, and reports from COMIKAGI. 
+Our goal is to keep stakeholders, partners, and the general public informed about ongoing 
+projects, operational developments, and community initiatives through transparent communication.
+</p>
+
 <div class="pdf-container">
 
 <a href="news.pdf" download class="download-btn">
@@ -228,12 +268,43 @@ Download News PDF
 
 </div>
 
+<!-- ADDED CONTENT -->
+<p style="margin-top:20px; text-transform:none;">
+The downloadable document above contains detailed reports, operational summaries, and key 
+announcements regarding mining activities, safety measures, and sustainability initiatives.
+</p>
+
+<p style="text-transform:none;">
+COMIKAGI regularly publishes verified information to ensure that all stakeholders have access 
+to accurate and up-to-date data. These publications may include environmental reports, project 
+updates, and organizational news.
+</p>
+
+<p style="text-transform:none;">
+We encourage users to review these documents carefully and stay informed about the cooperative’s 
+progress and future plans. Additional updates will be added periodically to reflect new developments.
+</p>
+
+
 </div>
 
 <footer>
 © 2026 COMIKAGI - COOPERATIVE MINIERE KABABARA ET GIKINGO |
-<a href="privacy_policy.html">PRIVACY POLICY</a>
+<a href="privacy_policy.html">PRIVACY POLICY</a> |
+<a href="terms_and_service.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="#" id="manage-cookies">Manage Cookies</a>
 </footer>
+
+<div id="cookie-banner">
+This site uses cookies to improve your experience. 
+By continuing to use our website, you agree to our 
+<a href="privacy_policy.html">Privacy Policy</a>.
+<button id="accept-cookies">Accept</button>
+<button id="decline-cookies">Decline</button>
+</div>
 
 <script>
 
@@ -252,6 +323,28 @@ navMenu.classList.remove("active");
 menuToggle.textContent="☰";
 });
 });
+
+/* COOKIE */
+
+window.onload=function(){
+if(!localStorage.getItem("cookiesAccepted")){
+document.getElementById("cookie-banner").style.display="block";
+}
+};
+
+document.getElementById("accept-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","true");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("decline-cookies").onclick=function(){
+localStorage.setItem("cookiesAccepted","false");
+document.getElementById("cookie-banner").style.display="none";
+};
+
+document.getElementById("manage-cookies").onclick=function(){
+document.getElementById("cookie-banner").style.display="block";
+};
 
 </script>
 
