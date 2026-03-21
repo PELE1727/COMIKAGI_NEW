@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Cookies - COMIKAGI</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+body{
+  min-height:100vh;
+  background:#111;
+  color:white;
+  line-height:1.6;
+}
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  z-index:1000;
+  box-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+.logo a{
+  color:#00c3ff;
+  font-size:20px;
+  font-weight:bold;
+  text-decoration:none;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:14px;
+  padding:8px 16px;
+  border-radius:25px;
+  transition:0.3s ease;
+}
+nav ul li a:hover{
+  background:#00c3ff;
+  color:black;
+}
+.menu-toggle{display:none;}
+/* MAIN CONTENT */
+.main{
+  margin-top:180px; /* increased space for visibility */
+  padding:50px 8%;
+  max-width:1100px;
+  margin:auto;
+  background:rgba(20,20,20,0.92);
+  border-radius:8px;
+}
+.main h1{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:32px;
+  color:#00c3ff;
+}
+.cookie-section{
+  margin-top:20px;
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:8px;
+}
+.cookie-section label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+  font-size:14px;
+}
+.cookie-section input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  accent-color:#00c3ff;
+  cursor:pointer;
+}
+.cookie-buttons{
+  text-align:center;
+  margin-top:30px;
+}
+.cookie-buttons button{
+  padding:10px 20px;
+  margin:5px;
+  font-size:14px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.accept-btn{background:#00c3ff;color:black;}
+.decline-btn{background:#ff4b4b;color:white;}
+.save-btn{background:#4caf50;color:white;}
+.accept-btn:hover,.decline-btn:hover,.save-btn:hover{opacity:0.9;}
+/* FOOTER */
+footer{
+  margin-top:60px;
+  background:#000;
+  color:white;
+  padding:20px 6%;
+  font-size:13px;
+  text-align:center;
+}
+footer a{color:#00c3ff;text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+/* MOBILE */
+@media(max-width:768px){
+  .menu-toggle{display:block;color:white;font-size:28px;cursor:pointer;}
+  nav{position:absolute;top:70px;left:0;width:100%;background:#000;max-height:0;overflow:hidden;transition:max-height 0.5s ease;}
+  nav.active{max-height:800px;}
+  nav ul{flex-direction:column;padding:10px 0;}
+  nav ul li{text-align:center;}
+  nav ul li a{padding:18px;display:block;}
+  .main{padding:40px 20px;margin-top:160px;} /* extra space on mobile too */
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">COMIKAGI</a></div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="about_us.html">ABOUT US</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="our_work.html">OUR WORK</a></li>
+      <li><a href="publication.html">PUBLICATION</a></li>
+      <li><a href="our_new.html">NEWS</a></li>
+      <li><a href="contact_us.html">CONTACTS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main">
+  <h1>MANAGE COOKIES</h1>
+  <p>
+  At COMIKAGI, we respect your privacy. This page allows you to manage your cookie preferences. 
+  You can choose which types of cookies to accept, decline, or customize for your browsing experience. 
+  Our practices comply with GDPR and CCPA standards.
+  </p>
+
+  <div class="cookie-section">
+    <label><span>Necessary Cookies (always active)</span><input type="checkbox" checked disabled></label>
+    <p style="font-size:12px;color:#ccc;">These cookies are essential for core site functionality such as security and accessibility.</p>
+
+    <label><span>Performance Cookies</span><input type="checkbox" id="performance"></label>
+    <p style="font-size:12px;color:#ccc;">Help us understand how visitors use our site so we can improve performance.</p>
+
+    <label><span>Functional Cookies</span><input type="checkbox" id="functional"></label>
+    <p style="font-size:12px;color:#ccc;">Remember your preferences (like language or region) for a personalized experience.</p>
+
+    <label><span>Advertising/Targeting Cookies</span><input type="checkbox" id="ads"></label>
+    <p style="font-size:12px;color:#ccc;">Used by services like Google AdSense to deliver relevant ads and measure campaign effectiveness.</p>
+
+    <div class="cookie-buttons">
+      <button class="accept-btn" id="acceptAll">Accept All</button>
+      <button class="decline-btn" id="declineAll">Decline All</button>
+      <button class="save-btn" id="saveSettings">Save Settings</button>
+    </div>
+  </div>
+
+  <p style="margin-top:20px;font-size:13px;">
+  By managing your cookies, you control your privacy. Necessary cookies are always active. 
+  Performance, Functional, and Advertising cookies can be toggled based on your preferences. 
+  You may update your choices at any time.
+  </p>
+</div>
+
+<footer>
+© 2026 COMIKAGI |
+<a href="privacy_policy.html">Privacy Policy</a> |
+<a href="terms_and_service.html">Terms of Service</a> |
+<a href="cookies.html">Cookie Policy</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact Us</a>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+menuToggle.addEventListener("click", ()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.textContent = navMenu.classList.contains("active") ? "✕" : "☰";
+});
+navLinks.forEach(link=>{
+  link.addEventListener("click", ()=>{
+    navMenu.classList.remove("active");
+    menuToggle.textContent = "☰";
+  });
+});
+
+// COOKIE MANAGEMENT LOGIC
+const performance = document.getElementById("performance");
+const functional = document.getElementById("functional");
+const ads = document.getElementById("ads");
+
+const loadPreferences = ()=>{
+  performance.checked = localStorage.getItem("performance") === "true";
+  functional.checked = localStorage.getItem("functional") === "true";
+  ads.checked = localStorage.getItem("ads") === "true";
+};
+loadPreferences();
+
+document.getElementById("acceptAll").addEventListener("click", ()=>{
+  performance.checked = true;
+  functional.checked = true;
+  ads.checked = true;
+  savePreferences();
+});
+document.getElementById("declineAll").addEventListener("click", ()=>{
+  performance.checked = false;
+  functional.checked = false;
+  ads.checked = false;
+  savePreferences();
+});
+document.getElementById("saveSettings").addEventListener("click", savePreferences);
+
+function savePreferences(){
+  localStorage.setItem("performance", performance.checked);
+  localStorage.setItem("functional", functional.checked);
+  localStorage.setItem("ads", ads.checked);
+  alert("Your cookie preferences have been saved.");
+}
+</script>
+
+</body>
+</html>
