@@ -158,6 +158,10 @@ footer a:hover{
 
 /* MOBILE */
 @media(max-width:768px){
+  .menu-toggle{
+    display:block;
+  }
+
   nav{
     position:absolute;
     top:70px;
@@ -167,13 +171,36 @@ footer a:hover{
     max-height:0;
     overflow:hidden;
     transition:max-height 0.5s ease;
+    z-index:1500; /* ensure menu is above content */
   }
-  nav.active{max-height:400px;}
-  nav ul{flex-direction:column;padding:10px 0;}
-  nav ul li{text-align:center;}
-  nav ul li a{padding:15px;display:block;}
-  .menu-toggle{display:block;}
-  .overlay{padding:40px 20px;}
+
+  nav.active{
+    max-height:800px; /* increased to fit all links */
+  }
+
+  nav ul{
+    flex-direction:column;
+    padding:10px 0;
+  }
+
+  nav ul li{
+    text-align:center;
+  }
+
+  nav ul li a{
+    padding:18px;
+    display:block;
+  }
+
+  header{
+    flex-wrap:nowrap; /* keep hamburger in corner */
+    justify-content:space-between;
+  }
+
+  .overlay{
+    padding:40px 20px; /* extra padding for mobile */
+    margin-top:100px; /* prevent overlap with fixed header */
+  }
 }
 </style>
 </head>
@@ -289,7 +316,6 @@ footer a:hover{
 <a href="#" id="manage-cookies">Manage Cookies</a>
 </footer>
 
-<!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner">
   This site uses cookies to improve your experience. 
   By continuing to use our website, you agree to our 
