@@ -61,11 +61,6 @@ nav ul li a:hover{
   font-size:28px;
   color:white;
   cursor:pointer;
-
-  /* Move hamburger to top-right corner */
-  position:absolute;
-  top:20px;
-  right:20px;
 }
 
 /* MAIN GRID SECTION */
@@ -160,33 +155,52 @@ footer a{
 
 /* MOBILE */
 @media(max-width:768px){
+
+  /* ✅ FIXED HEADER LAYOUT */
   header{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
   }
+
+  .logo{
+    position:absolute;
+    left:20px;
+    top:20px;
+  }
+
   .menu-toggle{
     display:block;
+    position:absolute;
+    right:20px;
+    top:20px;
   }
+
   nav{
     width:100%;
     max-height:0;
     overflow:hidden;
     transition:0.5s;
   }
+
   nav.active{
     max-height:500px;
   }
+
   nav ul{
     flex-direction:column;
     align-items:center;
   }
+
   .container{
     grid-template-columns:1fr;
   }
+
   .full-width{
     grid-column:1;
   }
+
   .what-we-do-grid{
     grid-template-columns:1fr;
   }
@@ -202,7 +216,9 @@ footer a{
   <div class="logo">
     <a href="index.html">COMIKAGI</a>
   </div>
+
   <div class="menu-toggle" id="menuToggle">☰</div>
+
   <nav id="navMenu">
     <ul>
       <li><a href="home.html">HOME</a></li>
@@ -219,10 +235,8 @@ footer a{
 <!-- MAIN CONTENT -->
 <div class="main">
 
-  <!-- TOP GRID -->
   <div class="container">
 
-    <!-- COMIKAGI -->
     <div class="box">
       <div class="title">COMIKAGI</div>
       <div class="single-img">
@@ -230,7 +244,6 @@ footer a{
       </div>
     </div>
 
-    <!-- LOCATION -->
     <div class="box">
       <div class="title">OUR LOCATION</div>
       <div class="single-img">
@@ -240,37 +253,32 @@ footer a{
 
   </div>
 
-  <!-- COMMUNITY -->
   <div class="container">
-
     <div class="box full-width">
       <div class="title">OUR COMMUNITY</div>
       <div class="community-grid">
-        <img id="img1" alt="Community 1">
-        <img id="img2" alt="Community 2">
-        <img id="img3" alt="Community 3">
-        <img id="img4" alt="Community 4">
+        <img id="img1">
+        <img id="img2">
+        <img id="img3">
+        <img id="img4">
       </div>
     </div>
-
   </div>
 
-  <!-- WHAT WE DO -->
   <div class="container">
     <div class="box full-width">
       <div class="title">WHAT WE DO</div>
       <div class="what-we-do-grid">
-        <img id="wwd1" alt="Activity 1">
-        <img id="wwd2" alt="Activity 2">
-        <img id="wwd3" alt="Activity 3">
-        <img id="wwd4" alt="Activity 4">
+        <img id="wwd1">
+        <img id="wwd2">
+        <img id="wwd3">
+        <img id="wwd4">
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   © 2026 COMIKAGI |
   <a href="privacy_policy.html">Privacy Policy</a> |
@@ -278,7 +286,7 @@ footer a{
   <a href="cookies.html">Cookie Policy</a> |
   <a href="disclaimer.html">Disclaimer</a> |
   <a href="contact_us.html">Contact Us</a> |
-  <a href="manage_cookies.html" id="manage-cookies">Manage Cookies</a>
+  <a href="manage_cookies.html">Manage Cookies</a>
 </footer>
 
 <script>
@@ -286,54 +294,50 @@ footer a{
 /* MENU */
 const menuToggle=document.getElementById("menuToggle");
 const navMenu=document.getElementById("navMenu");
+
 menuToggle.addEventListener("click",()=>{
   navMenu.classList.toggle("active");
   menuToggle.textContent=navMenu.classList.contains("active")?"✕":"☰";
 });
 
-/* COMMUNITY IMAGE ROTATION */
-const communityImages = [
+/* LOCATION ROTATION */
+const locationImages=["image2.png","image3.png"];
+let locIndex=0;
+setInterval(()=>{
+  document.getElementById("locationImg").src=locationImages[locIndex%2];
+  locIndex++;
+},4000);
+
+/* COMMUNITY ROTATION */
+const communityImages=[
   "image4.jpeg","image5.jpeg","image6.jpeg","image7.jpeg",
   "image8.jpeg","image9.jpeg","image10.jpeg","image11.jpeg",
   "image12.jpeg","image13.jpeg","image14.jpeg","image15.jpeg",
   "image16.jpeg","image17.jpeg","image18.jpeg","image19.jpeg"
 ];
-let index = 0;
-function changeCommunityImages(){
-  document.getElementById("img1").src = communityImages[index % 16];
-  document.getElementById("img2").src = communityImages[(index+1) % 16];
-  document.getElementById("img3").src = communityImages[(index+2) % 16];
-  document.getElementById("img4").src = communityImages[(index+3) % 16];
-  index += 4;
-}
-changeCommunityImages();
-setInterval(changeCommunityImages,3000);
+let index=0;
+setInterval(()=>{
+  img1.src=communityImages[index%16];
+  img2.src=communityImages[(index+1)%16];
+  img3.src=communityImages[(index+2)%16];
+  img4.src=communityImages[(index+3)%16];
+  index+=4;
+},3000);
 
-/* LOCATION IMAGE ROTATION */
-const locationImages = ["image2.png","image3.png"];
-let locIndex = 0;
-function changeLocationImage(){
-  document.getElementById("locationImg").src = locationImages[locIndex % 2];
-  locIndex++;
-}
-setInterval(changeLocationImage,4000);
-
-/* WHAT WE DO IMAGE ROTATION (image10 → image21) */
-const wwdImages = [
+/* WHAT WE DO ROTATION */
+const wwdImages=[
   "image10.jpeg","image11.jpeg","image12.jpeg","image13.jpeg",
   "image14.jpeg","image15.jpeg","image16.jpeg","image17.jpeg",
   "image18.jpeg","image19.jpeg","image20.jpeg","image21.jpeg"
 ];
-let wwdIndex = 0;
-function changeWWDImages(){
-  document.getElementById("wwd1").src = wwdImages[wwdIndex % 12];
-  document.getElementById("wwd2").src = wwdImages[(wwdIndex+1) % 12];
-  document.getElementById("wwd3").src = wwdImages[(wwdIndex+2) % 12];
-  document.getElementById("wwd4").src = wwdImages[(wwdIndex+3) % 12];
-  wwdIndex += 4;
-}
-changeWWDImages();
-setInterval(changeWWDImages,4000);
+let wwdIndex=0;
+setInterval(()=>{
+  wwd1.src=wwdImages[wwdIndex%12];
+  wwd2.src=wwdImages[(wwdIndex+1)%12];
+  wwd3.src=wwdImages[(wwdIndex+2)%12];
+  wwd4.src=wwdImages[(wwdIndex+3)%12];
+  wwdIndex+=4;
+},4000);
 
 </script>
 
